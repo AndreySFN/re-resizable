@@ -1,7 +1,7 @@
 {
   "name": "re-resizable",
   "version": "6.8.0",
-  "description": "Resizable component for React.",
+  "description": "Resizable component for React. Fork from re-resizable by Andrei Petrov (AndreySFN@yandex.ru)",
   "title": "re-resizable",
   "main": "./lib/index.es5.js",
   "module": "./lib/index.js",
