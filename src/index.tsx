@@ -68,6 +68,7 @@ export type ResizeCallback = (
   direction: Direction,
   elementRef: HTMLElement,
   delta: NumberSize,
+  size: NumberSize,
 ) => void;
 
 export type ResizeStartCallback = (
@@ -822,6 +823,11 @@ export class Resizable extends React.PureComponent<ResizableProps, State> {
       height: newHeight - original.height,
     };
 
+    const size = {
+      width: newWidth,
+      height: newHeight,
+    };
+
     if (width && typeof width === 'string') {
       if (endsWith(width, '%')) {
         const percent = (newWidth / parentSize.width) * 100;
@@ -862,7 +868,7 @@ export class Resizable extends React.PureComponent<ResizableProps, State> {
     this.setState(newState);
 
     if (this.props.onResize) {
-      this.props.onResize(event, direction, this.resizable, delta);
+      this.props.onResize(event, direction, this.resizable, delta, size);
     }
   }
 
@@ -875,8 +881,14 @@ export class Resizable extends React.PureComponent<ResizableProps, State> {
       width: this.size.width - original.width,
       height: this.size.height - original.height,
     };
+
+    const size = {
+      width: this.size.width,
+      height: this.size.height,
+    };
+
     if (this.props.onResizeStop) {
-      this.props.onResizeStop(event, direction, this.resizable, delta);
+      this.props.onResizeStop(event, direction, this.resizable, delta, size);
     }
     if (this.props.size) {
       this.setState(this.props.size);
