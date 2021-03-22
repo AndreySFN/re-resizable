@@ -1,5 +1,5 @@
 {
-  "name": "re-resizable",
+  "name": "@andreysfn/re-resizable",
   "version": "6.8.0",
   "description": "Resizable component for React. Fork from re-resizable by Andrei Petrov (AndreySFN@yandex.ru)",
   "title": "re-resizable",
@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bokuweb/react-resizable-box.git"
+    "url": "https://github.com/AndreySFN/re-resizable"
   },
   "author": "bokuweb",
   "license": "MIT",
